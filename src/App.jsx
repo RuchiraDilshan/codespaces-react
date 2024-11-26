@@ -1,29 +1,38 @@
+
 import './App.css';
 
+import Home from './components/Home';
+import Aboutus from './components/Aboutus';
+import Contactus from './components/Contactus';
+import {BrowserRouter as Router,Routes,Route,Link,NavLink } from 'react-router-dom'
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+
+  
+
+  return(
+    <div className='App'>
+      <Router>
+        <nav>
+          <ul>
+            <li><Link to="/Home">Home</Link></li>
+            <li><Link to="/Aboutus">Aboutus</Link></li>
+            <li><Link to="/Contactus">Contactus</Link></li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path='/Home' element={<Home/>}/>  
+          <Route path='/Aboutus' element={<Aboutus/>}/>
+          <Route path='/Contactus' element={<Contactus/>}/> 
+          </Routes>
+          </Router>   
+      </div>
+
+     
   );
+
+  
 }
 
 export default App;
